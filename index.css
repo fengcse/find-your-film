@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body,
+header {
+  min-width: 426px;
+} */
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.creator {
+  visibility: hidden;
+  width: 100%;
+  position: absolute;
+  font-size: 1rem;
+  margin-left: 1rem;
+  font-weight: 600;
+  top: 0;
+}
+
+/* header  */
+header {
+  padding: 1rem 0;
+  background-color: black;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header .container > h1 {
+  position: relative;
+}
+
+header .container > a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 0px 3px dimgray;
+  cursor: pointer;
+
+  text-decoration: none;
+  color: white;
+  bottom: 0;
+  z-index: 3;
+  background-color: black;
+}
+
+#myForm .searchBox,
+#myForm .searchButton {
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .creator {
+    visibility: visible;
+  }
+
+  main {
+    margin-top: 7rem;
+  }
+
+  header .container {
+    height: 4.5rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header a {
+    font-size: 1.5rem;
+  }
+}
+#myForm {
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+}
+#myForm .searchBox {
+  height: 2.5rem;
+}
+#myForm .searchBox,
+#myForm .searchButton {
+  border-radius: 0;
+  border: none;
+}
+
+#myForm .searchBox {
+  padding-left: 2em;
+  border: 1px solid LightSkyBlue;
+  outline: none;
+  font-size: 1rem;
+  margin-top: 0.1em;
+  width: 100%;
+  border-radius: 5px;
+}
+#myForm .searchBox:focus {
+  background-color: Azure;
+}
+
+#myForm .searchButton {
+  color: black;
+  font-size: 1.2rem;
+  border: 1px solid LightSkyBlue;
+
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  #myForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+
+  #myForm .searchBox {
+    flex-basis: 75%;
+    border-radius: 5px 0px 0px 5px;
+    flex: 1;
+  }
+  #myForm .searchButton {
+    max-width: 250px;
+    flex-basis: 25%;
+    border-radius: 0px 5px 5px 0px;
+    flex: 1;
+  }
+}
+
+#tooltip {
+  display: none;
+  background-color: #4d4dff;
+  position: absolute;
+  padding: 0.5em 1.5em;
+  margin-left: 1.5em;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: 600;
+}
+
+.toDisplayIndexPage,
+.toDisplayWatchList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.2em;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  border-bottom: 1px solid lightgray;
+}
+
+.movie .poster-image {
+  width: 40%;
+  margin-bottom: 0.4em;
+}
+
+.movie .movie-info {
+  position: relative;
+}
+
+.movie .movie-info h3 {
+  text-align: center;
+}
+
+.movie .movie-info p {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.movie .overview {
+  text-align: center;
+}
+
+.movie .overview p {
+  display: inline-block;
+}
+
+.movie .overview {
+  color: dimgray;
+  font-weight: 600;
+}
+.movie .plot {
+  display: inline-block;
+  color: dimgray;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  padding: 0.4em 0;
+  width: 100%;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin: 2px auto 0;
+
+  background-color: LightSkyBlue;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  height: 2.5rem;
+  border-radius: 5px;
+}
+
+button:hover,
+button[data-status="inWatchlist"]:hover {
+  background-color: SteelBlue;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  header .container {
+    width: 70%;
+  }
+
+  .container {
+    padding: 0 1rem;
+    width: 70%;
+  }
+  .movie {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  button {
+    min-width: 200px;
+    width: 40%;
+    display: block;
+  }
+
+  #myForm {
+    width: 100%;
+  }
+
+  .movie .poster-image {
+    flex-grow: 1;
+    max-width: 200px;
+  }
+
+  .right-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.3rem;
+    max-width: 700px;
+  }
+  .right-contents .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .right-contents .movie-info p {
+    margin-left: 2em;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -1.5rem;
+  }
+  .right-contents .movie-info h3 {
+    font-size: 1.8rem;
+  }
+}
+
+header a {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.2em 0.5em;
+}
+
+header a:hover {
+  background-color: white;
+  color: black;
+}
+
+.start-exploring,
+.unable-to-find,
+.noMovies {
+  color: dimgray;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5vw;
+  text-shadow: 1px 0px 5px #00ccff;
+  text-align: center;
+}
+
+button[data-status="inWatchlist"] {
+  background-color: white;
+  color: rgb(52, 153, 235);
+  border: 1px solid rgb(52, 177, 235);
+}
